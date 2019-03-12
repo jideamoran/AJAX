@@ -2,11 +2,11 @@ $(document).ready(function() {
 
 
     var animeArray = [
-        "panda",
+        "one piece",
         "senpai",
         "otaku",
         "shonen", 
-        "kawaii"];
+        "kawaii" ];
     
    
 
@@ -30,6 +30,7 @@ $(document).ready(function() {
 }
     };
 
+    
 
     $("#buttonClick").on("click", function (event) {
         event.preventDefault();
@@ -78,14 +79,14 @@ $(document).ready(function() {
                 var divRating = $("<p>").text("Rating: " + gifRating);
 
                 newItemdiv.append(divRating);
-                newItemdiv.append(dataImage);
+                newItemdiv.append(animeImage);
                 
-                ("#gifPics").prepend(newItemdiv);
+                $("#gifPics").prepend(newItemdiv);
             };
 
         }); 
 
-        $(".gifPics").on("click", ".gif", function() {
+        $("#gifPics").on("click", ".gif", function() {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
     var state = $(this).attr("data-state");
     // If the clicked image's state is still, update its src attribute to what its data-animate value is.
@@ -96,7 +97,7 @@ $(document).ready(function() {
       $(this).attr("data-state", "animate");
     } 
     
-else if (state === "animate") {
+    else if (state === "animate") {
       $(this).attr("src", $(this).attr("data-still"));
       $(this).attr("data-state", "still");
     }
